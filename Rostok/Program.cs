@@ -42,6 +42,8 @@ namespace Rostok
             }
             Console.WriteLine($"5. feladat: Friss gyümölcsök átlagos rosttartalma: {rosttartalom / marcimegorult}g");
 
+            Console.WriteLine($"7. feladat: Kategóriák száma: {lista.GroupBy(x => x.kategoria).Count()}");
+
             int aszalt = 0;
             int friss = 0;
             int gab = 0;
@@ -77,6 +79,8 @@ namespace Rostok
             Console.WriteLine($"\t Gabonák és lisztek - {gab}");
             Console.WriteLine($"\t Zöldségek - {zöld}");
             Console.WriteLine($"\t Magvak - {mag}");
+
+            
         }
     }
 }
