@@ -20,6 +20,7 @@ namespace Rostok
 
 
             int marcimegorult = 0;
+            
             foreach (var i in lista)
             {
                 if (i.egyseg != "100g")
@@ -28,6 +29,18 @@ namespace Rostok
                 }
             }
             Console.WriteLine($"4. feladat: Nem 100g-os egység: {marcimegorult}");
+
+            marcimegorult = 0;
+            double rosttartalom = 0;
+            foreach (var i in lista)
+            {
+                if (i.egyseg == "100g" && i.kategoria == "Friss gyümölcsök")
+                {
+                    marcimegorult++;
+                    rosttartalom += i.rost;
+                }
+            }
+            Console.WriteLine($"5. feladat: Friss gyümölcsök átlagos rosttartalma: {rosttartalom / marcimegorult}g");
         }
     }
 }
