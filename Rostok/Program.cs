@@ -16,7 +16,7 @@ namespace Rostok
             {
                 lista.Add(new Barni(i));
             }
-            
+            Console.WriteLine($"3. feladat: Élelmiszerek száma: {lista.Count}");
         }
     }
 }
