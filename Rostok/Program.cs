@@ -17,6 +17,17 @@ namespace Rostok
                 lista.Add(new Barni(i));
             }
             Console.WriteLine($"3. feladat: Élelmiszerek száma: {lista.Count}");
+
+
+            int marcimegorult = 0;
+            foreach (var i in lista)
+            {
+                if (i.egyseg != "100g")
+                {
+                    marcimegorult++;
+                }
+            }
+            Console.WriteLine($"4. feladat: Nem 100g-os egység: {marcimegorult}");
         }
     }
 }
