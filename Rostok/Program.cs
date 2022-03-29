@@ -41,6 +41,42 @@ namespace Rostok
                 }
             }
             Console.WriteLine($"5. feladat: Friss gyümölcsök átlagos rosttartalma: {rosttartalom / marcimegorult}g");
+
+            int aszalt = 0;
+            int friss = 0;
+            int gab = 0;
+            int zöld = 0;
+            int mag = 0;
+
+            foreach (var i in lista)
+            {
+                if (i.kategoria == "Aszalt gyümölcsök")
+                {
+                    aszalt++;
+                }
+                if (i.kategoria == "Friss gyümölcsök")
+                {
+                    friss++;
+                }
+                if (i.kategoria == "Gabonák és lisztek")
+                {
+                    gab++;
+                }
+                if (i.kategoria == "Zöldségek")
+                {
+                    zöld++;
+                }
+                if (i.kategoria == "Magvak")
+                {
+                    mag++;
+                }
+            }
+            Console.WriteLine("8. feladat: Statisztika");
+            Console.WriteLine($"\t Aszalt gyümölcsök - {aszalt}");
+            Console.WriteLine($"\t Friss gyümölcsök - {friss}");
+            Console.WriteLine($"\t Gabonák és lisztek - {gab}");
+            Console.WriteLine($"\t Zöldségek - {zöld}");
+            Console.WriteLine($"\t Magvak - {mag}");
         }
     }
 }
