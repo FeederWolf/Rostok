@@ -42,7 +42,11 @@ namespace Rostok
             }
             Console.WriteLine($"5. feladat: Friss gyümölcsök átlagos rosttartalma: {rosttartalom / marcimegorult}g");
 
-            Console.WriteLine($"7. feladat: Kategóriák száma: {lista.GroupBy(x => x.kategoria).Count()}");
+            Console.Write("6. feladat: Kérek egy karakterláncot: ");
+            string beker = Console.ReadLine();
+
+
+            Console.WriteLine($"7. feladat: Kategóriák száma: { lista.GroupBy(x => x.kategoria).Count() }");
 
             int aszalt = 0;
             int friss = 0;
@@ -80,7 +84,17 @@ namespace Rostok
             Console.WriteLine($"\t Zöldségek - {zöld}");
             Console.WriteLine($"\t Magvak - {mag}");
 
-            
+            Console.WriteLine("9. feladat: Rostok100g.txt");
+            StreamWriter fasz = File.CreateText("Rostok100g.txt");
+            fasz.WriteLine("Megnevezés;Kategória;Rost;pablo eszkobar XDDDDDDDD HÁHÁHÁHÁHÁÁHHÁÁHHÁHÁÁHÁ");
+
+            foreach (var i in lista)
+            {
+                if (i.egyseg == "100g")
+                {
+                    fasz.WriteLine($"{i.megnevezes};{i.kategoria};{i.rost}");
+                }
+            }
         }
     }
 }
