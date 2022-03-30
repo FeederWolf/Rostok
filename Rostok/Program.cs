@@ -42,8 +42,15 @@ namespace Rostok
             }
             Console.WriteLine($"5. feladat: Friss gyümölcsök átlagos rosttartalma: {rosttartalom / marcimegorult}g");
 
-            Console.Write("6. feladat: Kérek egy karakterláncot: ");
-            string beker = Console.ReadLine();
+            
+            string beker = "";
+
+            do
+            {
+                Console.Write("6. feladat: Kérek egy karakterláncot: ");
+                beker = Console.ReadLine();
+            } while (beker.Length < 2);
+
 
 
             Console.WriteLine($"7. feladat: Kategóriák száma: { lista.GroupBy(x => x.kategoria).Count() }");
@@ -86,7 +93,7 @@ namespace Rostok
 
             Console.WriteLine("9. feladat: Rostok100g.txt");
             StreamWriter fasz = File.CreateText("Rostok100g.txt");
-            fasz.WriteLine("Megnevezés;Kategória;Rost;pablo eszkobar XDDDDDDDD HÁHÁHÁHÁHÁÁHHÁÁHHÁHÁÁHÁ");
+            fasz.WriteLine("Megnevezés;Kategória;Rost;");
 
             foreach (var i in lista)
             {
