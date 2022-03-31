@@ -91,17 +91,22 @@ namespace Rostok
             Console.WriteLine($"\t Zöldségek - {zöld}");
             Console.WriteLine($"\t Magvak - {mag}");
 
+
+
             Console.WriteLine("9. feladat: Rostok100g.txt");
-            StreamWriter fasz = File.CreateText("Rostok100g.txt");
-            fasz.WriteLine("Megnevezés;Kategória;Rost;");
+            StreamWriter kiirat = File.CreateText("Rostok100g.txt"); //create file
+            kiirat.Close(); //STOP soros 0/0/0
+            List<string> lista2 = new List<string>(); //lista
+            lista2.Add("Megnevezés;Kategória;Rost;"); //+ bullshit
 
             foreach (var i in lista)
             {
                 if (i.egyseg == "100g")
                 {
-                    fasz.WriteLine($"{i.megnevezes};{i.kategoria};{i.rost}");
+                    lista2.Add($"{i.megnevezes};{i.kategoria};{i.rost}"); //egyértelmű
                 }
             }
+            File.WriteAllLines("Rostok100g.txt", lista2);
         }
     }
 }
